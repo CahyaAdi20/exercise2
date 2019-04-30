@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Calculator</title>
+<style>
+.box{
+    width: 202px;
+    height: auto;
+    background-color:rgb(252, 241, 241);
+    padding: 12px 10px 10px 10px;}
+</style>
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+
+
+
+function calc(){
+
+var tool = document.form1;
+var x=eval(tool.x.value);
+var y=eval(tool.y.value);
+var pil= tool.opt.value;
+if (pil == "tambah") {
+var z = x + y;
+ }else if (pil == "kurang") {
+var z = x - y;
+ } else if (pil == "kali") {
+var z = x * y;
+ } else if (pil == "bagi") {
+var z = x / y;
+ }
+ tool.hasil.value = z;
+ tool.x.value = "";
+ tool.y.value = "";
+}
+function resetForm(){
+document.form1.reset();
+}
+
+
+
+</script>
+<div class="box">
+<form name="form1" action="#">
+<p>input a  <input type="text" name="x" /></p>
+<p>input b  <input type="text" name="y" /></p>
+<p>hasil  <input type="text" name="hasil"/></p>
+<p>operasi <select name="opt"></p>
+ <option value="tambah"> +</option>
+ <option value="kurang"> -</option>
+ <option value="kali"> *</option>
+ <option value="bagi"> /</option>
+</select>
+<br>
+<input type="button" value="hitung" onClick="calc()" />
+<input type="button" value="hapus" onClick="resetForm()" />
+</form>
+</body>
+</html>
